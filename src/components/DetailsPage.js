@@ -36,15 +36,16 @@ function DetailsPage({ category, items, onBuy }) {
               className="border border-gray-300 rounded p-2 mt-2"
             />
           </label>
-          <label className="flex flex-col text-gray-700">
-            Date:
-            <input
-              type="date"
-              value={filters.date}
-              onChange={(e) => setFilters({ ...filters, date: e.target.value })}
-              className="border border-gray-300 rounded p-2 mt-2"
-            />
-          </label>
+                {category == "Extras" ? <div></div> : <label className="flex flex-col text-gray-700">
+                    Date:
+                    <input
+                        type="date"
+                        value={filters.date}
+                        onChange={(e) => setFilters({ ...filters, date: e.target.value })}
+                        className="border border-gray-300 rounded p-2 mt-2"
+                    />
+                </label>
+            }
         </div>
         <ul className="mt-6 space-y-4">
           {filteredItems.map((item) => (
